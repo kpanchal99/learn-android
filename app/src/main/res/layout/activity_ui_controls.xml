@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- AutoCompleteTextView for City -->
+    <AutoCompleteTextView
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City" />
+
+    <!-- MultiAutoCompleteTextView for Degree -->
+    <MultiAutoCompleteTextView
+        android:id="@+id/degree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/city"
+        android:hint="Degree"/>
+
+    <!-- EditText for Date of Birth -->
+    <EditText
+        android:id="@+id/dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/degree"
+        android:hint="Date of Birth"
+        android:inputType="date" />
+
+    <!-- CheckBoxes for Education Levels -->
+    <CheckBox
+        android:id="@+id/ssc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dob"
+        android:text="SSC" />
+
+    <CheckBox
+        android:id="@+id/hsc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ssc"
+        android:text="HSC" />
+
+    <CheckBox
+        android:id="@+id/ug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hsc"
+        android:text="UG" />
+
+    <!-- RadioGroup for Meal Preference -->
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ug">
+
+        <RadioButton
+            android:id="@+id/veg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Veg" />
+
+        <RadioButton
+            android:id="@+id/non_veg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Non-Veg" />
+
+        <RadioButton
+            android:id="@+id/both"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Both" />
+    </RadioGroup>
+
+    <!-- Spinner for University -->
+    <Spinner
+        android:id="@+id/university"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rg"
+        android:hint="University" />
+
+    <!-- Button for Registration -->
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/university"
+        android:text="Register" />
+
+    <!-- TextView for Details -->
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register"
+        android:text="Details"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+</RelativeLayout>

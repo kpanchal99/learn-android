@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Learn Android</string>
+    <!--    login-->
+    <string name="login">Login</string>
+    <string name="login_title">Learn Android</string>
+    <string name="login_email">Enter Email</string>
+    <string name="login_pwd">Enter Password</string>
+
+    <!--    signup-->
+
+    <string name="signup">Sign Up</string>
+    <string name="signup_email">Enter Email</string>
+    <string name="signup_pwd">Enter Password</string>
+    <string name="signup_cnf_pwd">Confirm Password</string>
+
+    <string-array name="city">
+        <item>Mumbai</item>
+        <item>Bangalore</item>
+        <item>Hyderabad</item>
+        <item>Delhi</item>
+        <item>Chennai</item>
+        <item>Kolkata</item>
+        <item>Pune</item>
+        <item>Ahmedabad</item>
+        <item>Jaipur</item>
+    </string-array>
 </resources>

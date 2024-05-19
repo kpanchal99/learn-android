@@ -13,10 +13,46 @@
         android:theme="@style/Theme.Sem2Project"
         tools:targetApi="31">
         <activity
-            android:name=".HomePage"
+            android:name=".MenuExample"
             android:exported="false" />
         <activity
-            android:name=".Signup"
+            android:name=".UI_Controls"
+            android:exported="false" />
+        <activity
+            android:name=".SQLLite_CRUD"
+            android:exported="false" />
+        <activity
+            android:name=".AlertDialogBox"
+            android:exported="false" />
+        <activity
+            android:name=".EmailIntent"
+            android:exported="false" />
+        <activity
+            android:name=".ToolbarExample"
+            android:exported="false" />
+        <activity
+            android:name=".ExplicitIntentExample"
+            android:exported="false" />
+        <activity
+            android:name=".MultipleIntentInOne"
+            android:exported="false" />
+        <activity
+            android:name=".ImplicitIntent"
+            android:exported="false" />
+        <activity
+            android:name=".SetWallpaper"
+            android:exported="false" />
+        <activity
+            android:name=".Calculator"
+            android:exported="false" />
+        <activity
+            android:name="AllActivities.calculator"
+            android:exported="false" />
+        <activity
+            android:name=".Sign_Up"
+            android:exported="false" />
+        <activity
+            android:name=".HomePage"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

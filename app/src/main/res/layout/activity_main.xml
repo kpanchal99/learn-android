@@ -1,68 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="25dp"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="242dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="618dp"
         android:fontFamily="monospace"
-        android:text="JobPortal Login"
+        android:text="@string/login_title"
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
+        android:layout_marginVertical="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/signUpRedirectBtn"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/loginEmail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="304dp"
-        android:text="Signup" />
-
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="228dp"
-        android:layout_marginBottom="306dp"
-        android:text="Login"/>
+        android:ems="10"
+        android:hint="@string/login_email"
+        android:layout_marginVertical="20dp"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/loginPwd"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="98dp"
-        android:layout_marginBottom="384dp"
         android:ems="10"
+        android:hint="@string/login_pwd"
+        android:layout_marginVertical="20dp"
         android:inputType="textPassword" />
 
-    <EditText
-        android:id="@+id/loginEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="98dp"
-        android:layout_marginBottom="471dp"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:text="@string/login" />
+
+        <Button
+            android:id="@+id/signUpRedirectBtn"
+            android:layout_width="163dp"
+            android:layout_height="wrap_content"
+            android:text="@string/signup" />
+
+
+    </LinearLayout>
+</LinearLayout>

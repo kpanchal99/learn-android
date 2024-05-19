@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="activities">
+        <item>MainActivity,Login</item>
+        <item>Sign_Up,SignUp</item>
+    </array>
+</resources>
