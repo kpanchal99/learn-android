@@ -1,10 +1,15 @@
 package com.example.sem2project;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,8 +17,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +35,7 @@ import java.util.Map;
 public class HomePage extends AppCompatActivity implements SelectListener {
 
 
+    Toolbar toolbar;
     RecyclerView recyclerView;
     List<MyModel> myModelList;
     CustomListAdapter customListAdapter;
@@ -39,6 +48,16 @@ public class HomePage extends AppCompatActivity implements SelectListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
         searchView = findViewById(R.id.search_view);
+
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String username = settings.getString("username", "defaultUsername");
+
+        toolbar = findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+        // Set toolbar title
+        getSupportActionBar().setTitle("Welcome, "+username);
+
+        //show list
         displayItems();
 
         getActivityList();
@@ -115,7 +134,7 @@ public class HomePage extends AppCompatActivity implements SelectListener {
         myModelList.add(new MyModel("AlertDialog Box",AlertDialogBox.class));
         myModelList.add(new MyModel("SQLLiteDB - CRUD",SQLLite_CRUD.class));
         myModelList.add(new MyModel("UI Controls",UI_Controls.class));
-        myModelList.add(new MyModel("Menu",MenuExample.class));
+//        myModelList.add(new MyModel("Menu",MenuExample.class));
 //        myModelList.add(new MyModel("Internationalization and Localise","12"));
 //        myModelList.add(new MyModel("firebaseExample","firebaseExample"));
 
@@ -128,5 +147,44 @@ public class HomePage extends AppCompatActivity implements SelectListener {
         Toast.makeText(this, myModel.getTitle(), Toast.LENGTH_SHORT).show();
         Intent intent= new Intent(getApplicationContext(), myModel.getActivityName());
         startActivity(intent);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.option_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_logout) {
+            // remove preference
+            // Handle logout
+            startActivity(new Intent(HomePage.this, MainActivity.class));
+            finish();
+            return true;
+        } else if (id == R.id.action_about) {
+            // Show about dialog
+            showAboutDialog();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+    private void showAboutDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("About");
+        builder.setMessage("This is Learn Android App.\n Android Project - Sem 2\n" +
+                "Karan Panchal  \n" +
+                "MCA \n" +
+                "KJSIM \n");
+        builder.setPositiveButton("OK", null);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

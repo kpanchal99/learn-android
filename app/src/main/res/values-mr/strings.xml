@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ऍंड्रॉयड शिका</string>
+    <string name="login">लॉगिन</string>
+    <string name="login_title">ऍंड्रॉयड शिका</string>
+    <string name="login_email">ईमेल प्रविष्ट करा</string>
+    <string name="login_pwd">पासवर्ड प्रविष्ट करा</string>
+    <string name="choose_language">भाषा निवडा</string>
+
+    <string name="signup">साइन अप</string>
+    <string name="signup_email">ईमेल प्रविष्ट करा</string>
+    <string name="signup_pwd">पासवर्ड प्रविष्ट करा</string>
+    <string name="signup_cnf_pwd">पासवर्डची पुष्टी करा</string>
+
+</resources>

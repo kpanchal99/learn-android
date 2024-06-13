@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">एंड्रॉयड सीखें</string>
+    <string name="login">लॉगिन</string>
+    <string name="login_title">एंड्रॉयड सीखें</string>
+    <string name="login_email">ईमेल दर्ज करें</string>
+    <string name="login_pwd">पासवर्ड दर्ज करें</string>
+    <string name="choose_language">भाषा चुनें</string>
+
+    <string name="signup">साइन अप</string>
+    <string name="signup_email">ईमेल दर्ज करें</string>
+    <string name="signup_pwd">पासवर्ड दर्ज करें</string>
+    <string name="signup_cnf_pwd">पासवर्ड की पुष्टि करें</string>
+
+</resources>

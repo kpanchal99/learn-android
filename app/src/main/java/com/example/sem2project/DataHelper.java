@@ -5,80 +5,70 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
 import androidx.annotation.Nullable;
 
 public class DataHelper extends SQLiteOpenHelper {
 
-    SQLiteDatabase database;
+    private static final String DATABASE_NAME = "mca202325.db";
+    private static final String TABLE_NAME = "MCAFY";
+    private static final int DATABASE_VERSION = 1;
+    private SQLiteDatabase database;
+
     public DataHelper(@Nullable Context context) {
-        super(context,"mca202325.db",null,1);
-//        sqLiteDatabase = getWritableDatabase();
-        database = getWritableDatabase();
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        database = this.getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-//        sqLiteDatabase = getWritableDatabase();
-        sqLiteDatabase.execSQL("create table MCAFY(rollno integer primary key autoincrement,email text,password text,cid text,course text,city text)");
+        String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (" +
+                "rollno INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "email TEXT, " +
+                "password TEXT, " +
+                "cid TEXT, " +
+                "course TEXT, " +
+                "city TEXT)";
+        sqLiteDatabase.execSQL(CREATE_TABLE);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        // Handle database upgrade as needed
+    }
 
-    }
-    public boolean insertUser(String email,String pwd,String cid,String course,String city){
+    public boolean insertUser(String email, String pwd, String cid, String course, String city) {
         ContentValues cv = new ContentValues();
-        cv.put("email",email);
-        cv.put("password",pwd);
-        cv.put("cid",cid);
+        cv.put("email", email);
+        cv.put("password", pwd);
+        cv.put("cid", cid);
         cv.put("course", course);
-        cv.put("city",city);
-        long res = database.insert("MCAFY",null, cv);
-        if (res == -1)
-            return false;
-        else
-            return true;
+        cv.put("city", city);
+        long res = database.insert(TABLE_NAME, null, cv);
+        return res != -1;
     }
-    public Cursor showRecords(){
-        Cursor result  = database.rawQuery("select * from MCAFY", null);
-        if(result.getCount()!=0)
-            return result;
-        else
-            return result;
+
+    public Cursor showRecords() {
+        return database.rawQuery("SELECT * FROM " + TABLE_NAME, null);
     }
 
     public Cursor searchRecord(int rollno) {
-        Cursor result  = database.rawQuery("select * from MCAFY where rollno=" + rollno , null);
-        if(result.getCount()>0)
-            return result;
-        else
-            return result;
+        return database.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE rollno=" + rollno, null);
     }
-    public boolean updateRecord(int rollno, String email,String pwd, String cid, String course,String city){
-        ContentValues cv = new ContentValues();
-        cv.put("email",email);
-        cv.put("password",pwd);
-        cv.put("cid",cid);
-        cv.put("course",course);
-        cv.put("city",city);
-        long res = database.update("MCAFY",cv,"rollno=?",new String[]{String.valueOf(rollno)});
 
-        if (res != -1)
-            return true;
-        else
-            return false;
-    }
-    public boolean deleteRecord(int rollno, String email,String pwd, String cid, String course,String city){
+    public boolean updateRecord(int rollno, String email, String pwd, String cid, String course, String city) {
         ContentValues cv = new ContentValues();
-        cv.put("email",email);
-        cv.put("password",pwd);
-        cv.put("cid",cid);
-        cv.put("course",course);
-        cv.put("city",city);
-        long res = database.delete("MCAFY","rollno=?",new String[]{String.valueOf(rollno)});
-        if (res != -1)
-            return true;
-        else
-            return false;
+        cv.put("email", email);
+        cv.put("password", pwd);
+        cv.put("cid", cid);
+        cv.put("course", course);
+        cv.put("city", city);
+        long res = database.update(TABLE_NAME, cv, "rollno=?", new String[]{String.valueOf(rollno)});
+        return res != -1;
+    }
+
+    public boolean deleteRecord(int rollno) {
+        long res = database.delete(TABLE_NAME, "rollno=?", new String[]{String.valueOf(rollno)});
+        return res != -1;
     }
 }

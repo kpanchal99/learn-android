@@ -5,7 +5,7 @@
     <string name="login_title">Learn Android</string>
     <string name="login_email">Enter Email</string>
     <string name="login_pwd">Enter Password</string>
-
+    <string name="choose_language">Choose Language</string>
     <!--    signup-->
 
     <string name="signup">Sign Up</string>
@@ -23,5 +23,25 @@
         <item>Pune</item>
         <item>Ahmedabad</item>
         <item>Jaipur</item>
+    </string-array>
+
+    <string-array name="degree">
+        <item>Bachelor of Arts</item>
+        <item>Bachelor of Science</item>
+        <item>Bachelor of Commerce</item>
+        <item>Bachelor of Engineering</item>
+        <item>Master of Arts</item>
+        <item>Master of Science</item>
+        <item>Master of Commerce</item>
+
+        <!-- Add more degrees as needed -->
+    </string-array>
+
+    <string-array name="university">
+        <item>University of Delhi</item>
+        <item>University of Mumbai</item>
+        <item>Indian Institute of Technology, Bombay</item>
+        <item>Jawaharlal Nehru University</item>
+        <item>University of Calcutta</item>
     </string-array>
 </resources>

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
-    <!-- AutoCompleteTextView for City -->
     <AutoCompleteTextView
         android:id="@+id/city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="City" />
 
-    <!-- MultiAutoCompleteTextView for Degree -->
     <MultiAutoCompleteTextView
         android:id="@+id/degree"
         android:layout_width="match_parent"
@@ -18,7 +17,6 @@
         android:layout_below="@id/city"
         android:hint="Degree"/>
 
-    <!-- EditText for Date of Birth -->
     <EditText
         android:id="@+id/dob"
         android:layout_width="match_parent"
@@ -27,44 +25,55 @@
         android:hint="Date of Birth"
         android:inputType="date" />
 
-    <!-- CheckBoxes for Education Levels -->
     <CheckBox
         android:id="@+id/ssc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/dob"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="2dp"
         android:text="SSC" />
 
     <CheckBox
         android:id="@+id/hsc"
-        android:layout_width="wrap_content"
+        android:layout_width="76dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/ssc"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-50dp"
+        android:layout_marginEnd="164dp"
         android:text="HSC" />
 
     <CheckBox
         android:id="@+id/ug"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="86dp"
+        android:layout_height="37dp"
         android:layout_below="@id/hsc"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="263dp"
+        android:layout_marginTop="-52dp"
+        android:layout_marginEnd="46dp"
         android:text="UG" />
 
-    <!-- RadioGroup for Meal Preference -->
     <RadioGroup
         android:id="@+id/rg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ug">
+        android:layout_below="@id/ug"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp">
 
         <RadioButton
             android:id="@+id/veg"
-            android:layout_width="wrap_content"
+            android:layout_width="118dp"
             android:layout_height="wrap_content"
             android:text="Veg" />
 
         <RadioButton
             android:id="@+id/non_veg"
-            android:layout_width="wrap_content"
+            android:layout_width="147dp"
             android:layout_height="wrap_content"
             android:text="Non-Veg" />
 
@@ -75,29 +84,30 @@
             android:text="Both" />
     </RadioGroup>
 
-    <!-- Spinner for University -->
     <Spinner
         android:id="@+id/university"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="382dp"
+        android:layout_height="42dp"
         android:layout_below="@id/rg"
         android:hint="University" />
 
-    <!-- Button for Registration -->
     <Button
         android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="136dp"
+        android:layout_height="46dp"
         android:layout_below="@id/university"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="131dp"
         android:text="Register" />
 
-    <!-- TextView for Details -->
     <TextView
         android:id="@+id/details"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/register"
         android:text="Details"
         android:textAppearance="?android:textAppearanceLarge" />
-
 </RelativeLayout>

@@ -64,15 +64,16 @@ public class Sign_Up extends AppCompatActivity {
             Toast.makeText(this, "Please fill values!!", Toast.LENGTH_SHORT).show();
             return;
         }
-        //check password in firebase
+        //insert email password in firebase
         firebaseAuth.createUserWithEmailAndPassword(email,pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(Sign_Up.this, "Registered Successful", Toast.LENGTH_SHORT).show();
-                    // redirect to home activity after success
-                    Intent intent = new Intent(Sign_Up.this, HomePage.class);
+                    // redirect to login activity after success
+                    Intent intent = new Intent(Sign_Up.this, MainActivity.class);
                     startActivity(intent);
+
                 }
                 else{
                     Toast.makeText(Sign_Up.this, "Failed!! Try Again..", Toast.LENGTH_SHORT).show();
